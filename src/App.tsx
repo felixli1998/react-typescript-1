@@ -68,6 +68,25 @@ const App: React.FC = () => {
     setTodoArr(newArr);
   }
 
+  function EditHandle(index:number, newTodo:string){
+    console.log(' -- inside EditHandle --')
+    const newArr = todoArr.map( (obj) => {
+
+      if (obj.index === index) {
+        // Update new Todo descriptio
+        return { ...obj, todo: newTodo }
+
+      }
+      else{
+        // Do nothing
+        return { ...obj }
+      }
+    })
+
+    setTodoArr(newArr)
+    
+  }
+
   return (
     <div className="App">
       <span className="heading">
@@ -92,6 +111,7 @@ const App: React.FC = () => {
                 status={ele.status}
                 updateStatus={updateStatus}
                 deleteHandle = {deleteHandle}
+                editHandle = {EditHandle}
               />
             </div>
           );

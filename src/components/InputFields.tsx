@@ -12,7 +12,7 @@ const InputFields = ( props: Props ) => {
 
     return (
     <form onSubmit={ props.handleAdd } className="input">
-        <input className="input__box" type="input__box " placeholder="Enter a task"
+        <input className="input__box" type="text " placeholder="Enter a task"
         // By setting value to todo and having an OnChange that constantly updates 
         // It will reflect the change inside the input value 
         value={props.todo}
